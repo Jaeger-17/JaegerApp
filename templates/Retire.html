@@ -2,4 +2,42 @@
 {% block title %}Retirement Calculator{% endblock %}
 {% block content %}
 <h1>This page is for Retirement Calculation</h1>
+<form action="#" method="POST">
+    <label for="Number One">Age:</label>
+    <input
+        type="text"
+        placeholder="Age"
+        class="u-full-width"
+        name="age"
+    /> <br>
+
+    <label for="Number Two">Salary:</label>
+    <input
+        type="text"
+        placeholder="Salary"
+        class="u-full-width"
+        name="salary"
+    /> <br>
+
+    <label for="Number Three">Percent saved annually:</label>
+    <input
+        type="text"
+        placeholder="Savings"
+        class="u-full-width"
+        name="percent"
+    /> <br>
+
+    <label for="Number Four">Savings goal:</label>
+    <input
+        type="text"
+        placeholder="Goal"
+        class="u-full-width"
+        name="goal"
+    /> <br>
+
+    <input type="submit" value="Calculate" id="calc_btn" /> <br>
+
+    {{ resultRetire }}
+
+</form>
 {% endblock %}
