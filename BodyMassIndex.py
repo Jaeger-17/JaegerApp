@@ -7,7 +7,7 @@ class BodyMassIndex:
 
     '''def set_height(self, givenFeet, givenInches):
         self.feet = givenFeet
-        self.inches = givenInches
+        self.inches = givenInches #
 
     def set_weight(self, givenWeight):
         self.weight = givenWeight
