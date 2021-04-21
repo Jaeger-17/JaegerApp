@@ -1,4 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
+from BodyMassIndex import BodyMassIndex
 
 app = Flask(__name__)
 
@@ -8,7 +9,20 @@ def home():
 
 @app.route("/BMI", methods=["POST", "GET"])
 def BMI():
-    return render_template("BMI.html")
+    if request.method == 'POST':
+        #Set up BMI object
+        
+        #Get data from form input
+        feet = request.form['feet']
+        inches = request.form['inches']
+        weight = request.form['weight']
+        userBmi = BodyMassIndex(feet, inches, weight)
+
+        #Calculation
+        result = userBmi.calculate_bmi()
+        return render_template("BMI.html", result = result)
+    else:
+        return render_template("BMI.html")
 
 @app.route("/retire")
 def retire():
