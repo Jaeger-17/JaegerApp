@@ -41,6 +41,7 @@ def retire():
         return render_template("Retire.html")
 
 
+'''
 @app.route("/login", methods=["POST", "GET"])
 def login():
     return render_template()
@@ -49,7 +50,7 @@ app.route("/<usr>")
 def user(usr):
     return render_template()
 
-'''
+
 @app.route("/<name>")
 def user(name):
     return f"Hello, {name}!"
