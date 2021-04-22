@@ -8,7 +8,6 @@ class RetirementSavings:
         self.salary = givenSalary
         self.percent = givenPercent
         self.goal = givenGoal
-        return
     
     def check_numbers_r(self):
         if self.age < 0 or self.salary < 0 or self.percent < 0 or self.goal < 0 or self.percent > 100:
@@ -17,16 +16,16 @@ class RetirementSavings:
             return
 
     def get_savings_per_year(self):
-        return (self.salary * (self.percent/100)) * 1.35
+        return (float(self.salary) * (float(self.percent)/100)) * 1.35
 
     def get_years_til_goal(self):
         if self.salary == 0:
             return 100
         else:
-            return math.ceil(self.goal / self.get_savings_per_year())
+            return math.ceil(float(self.goal) / self.get_savings_per_year())
 
     def calculate_goal_age(self):
-        return self.get_years_til_goal() + self.age
+        return self.get_years_til_goal() + int(self.age)
 
     def give_result_r(self):
         retireAge = self.calculate_goal_age()

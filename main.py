@@ -21,7 +21,7 @@ def BMI():
         userBmi = BodyMassIndex(feet, inches, weight)
 
         # Call calculation function
-        result = userBmi.calculate_BMI()
+        result = userBmi.calculate_bmi()
         return render_template("BMI.html", result=result)
     else:
         return render_template("BMI.html")

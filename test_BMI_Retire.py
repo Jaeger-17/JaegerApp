@@ -64,8 +64,8 @@ class TestApp(unittest.TestCase):
         userBMI1 = BodyMassIndex(5, 10, 150)
         userBMI2 = BodyMassIndex(6, 3, 120)
 
-        self.assertEqual(userBMI1.calculate_BMI(), 22.0)
-        self.assertEqual(userBMI2.calculate_BMI(), 15.4)
+        self.assertEqual(userBMI1.calculate_bmi(), 22.0)
+        self.assertEqual(userBMI2.calculate_bmi(), 15.4)
 
 
     def test_give_result(self):
