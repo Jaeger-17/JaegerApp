@@ -2,14 +2,14 @@ class BodyMassIndex:
 
     def __init__(self, givenFeet, givenInches, givenWeight):
         self.inches = givenInches
-        self.feet = givenFeet 
+        self.feet = givenFeet
         self.weight = givenWeight
 
     def check_numbers(self):
         if self.feet < 0 or self.inches < 0 or self.weight < 0:
-            raise Exception
+            raise ValueError
         elif self.feet == 0 and self.inches == 0:
-            raise Exception
+            raise ValueError
         return
 
     def conv_to_kg(self):

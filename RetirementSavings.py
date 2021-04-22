@@ -11,7 +11,7 @@ class RetirementSavings:
 
     def check_numbers_r(self):
         if self.age < 0 or self.salary < 0 or self.percent < 0 or self.goal < 0 or self.percent > 100:
-            raise Exception
+            raise ValueError
         else:
             return
 

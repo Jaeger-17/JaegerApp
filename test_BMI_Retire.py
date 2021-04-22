@@ -20,16 +20,16 @@ class TestApp(unittest.TestCase):
 
         try:
             userBMI1.check_numbers()
-        except NegativeNumber:
+        except ValueError:
             self.fail("unexpected exception")
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userBMI2.check_numbers()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userBMI3.check_numbers()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userBMI4.check_numbers()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userBMI5.check_numbers()
 
     def test_conv_to_kg(self):
@@ -54,7 +54,7 @@ class TestApp(unittest.TestCase):
         userBMI1 = BodyMassIndex(5, 10, 0)
         userBMI2 = BodyMassIndex(0, 0, 0)
 
-        self.assertEqual(userBMI1.conv_to_meters(), 1.75)        
+        self.assertEqual(userBMI1.conv_to_meters(), 1.75)
         self.assertEqual(userBMI2.conv_to_meters(), 0)
 
     def test_calculate_BMI(self):
@@ -87,7 +87,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(userRetire.salary, 65000)
         self.assertEqual(userRetire.percent, 10)
         self.assertEqual(userRetire.goal, 500000)
-    
+
     def test_check_numbers_r(self):
         userRetire1 = RetirementSavings(25, 65000, 10, 500000)
         userRetire2 = RetirementSavings(-25, 65000, 10, 500000)
@@ -97,16 +97,16 @@ class TestApp(unittest.TestCase):
 
         try:
             userRetire1.check_numbers_r()
-        except NegativeNumber:
+        except ValueError:
             self.fail("unexpected exception")
 
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userRetire2.check_numbers_r()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userRetire3.check_numbers_r()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userRetire4.check_numbers_r()
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             userRetire5.check_numbers_r()
 
     def test_get_savings_per_year(self):
@@ -144,6 +144,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(userRetire1.give_result_r(), "You will retire at age 82.")
         self.assertEqual(userRetire2.give_result_r(), "You will not retire until you are 100 or older.")
         self.assertEqual(userRetire3.give_result_r(), "You will not retire until you are 100 or older.")
+
 
 if __name__ == '__main__':
     unittest.main()
