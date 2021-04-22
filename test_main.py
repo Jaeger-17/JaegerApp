@@ -1,8 +1,8 @@
 from main import app
 import unittest
 
-class BMITestCase(unittest.TestCase):
 
+class BMITestCase(unittest.TestCase):
 
     # test that flask was set up correctly
     def test_index(self):
