@@ -31,4 +31,3 @@ class BodyMassIndex:
             return "You are overweight.\n"
         else:
             return "You are obese.\n"
-            

@@ -20,4 +20,3 @@ class RetirementSavings:
             return ("You will retire at age " + str(retirementAge) + "\n")
         else:
             return "You will probably not be able to reach your goal.\n"
-            
