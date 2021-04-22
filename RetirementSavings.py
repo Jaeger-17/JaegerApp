@@ -1,8 +1,9 @@
 import math
 
+
 class RetirementSavings:
 
-    def __init__(self, givenAge = 20, givenSalary = 40000, givenPercent = 1, givenGoal = 1000000):
+    def __init__(self, givenAge=20, givenSalary=40000, givenPercent=1, givenGoal=1000000):
         self.age = givenAge
         self.salary = givenSalary
         self.percent = givenPercent
@@ -16,6 +17,6 @@ class RetirementSavings:
     def give_retirement_age(self):
         retirementAge = self.calculate_retirement()
         if retirementAge < 100:
-            return ("You will retire at age " + str(retirementAge))
+            return ("You will retire at age " + str(retirementAge) + "\n")
         else:
-            return "You will probably not be able to reach your goal."
+            return "You will probably not be able to reach your goal.\n"

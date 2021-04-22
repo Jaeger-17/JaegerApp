@@ -1,8 +1,8 @@
 class BodyMassIndex:
 
-    def __init__(self, givenFeet = 5, givenInches = 0, givenWeight = 100):
+    def __init__(self, givenFeet=5, givenInches=0, givenWeight=100):
         self.inches = givenInches
-        self.feet = givenFeet 
+        self.feet = givenFeet
         self.weight = givenWeight
 
     '''def set_height(self, givenFeet, givenInches):
@@ -24,10 +24,10 @@ class BodyMassIndex:
     def give_result(self):
         bmi = self.calculate_bmi()
         if bmi < 18.5:
-            return "You are underweight."
+            return "You are underweight.\n"
         elif (bmi >= 18.5 and bmi < 25):
-            return "Your weight is normal."
+            return "Your weight is normal.\n"
         elif (bmi >= 25 and bmi < 30):
-            return "You are overweight."
+            return "You are overweight.\n"
         else:
-            return "You are obese."
+            return "You are obese.\n"
