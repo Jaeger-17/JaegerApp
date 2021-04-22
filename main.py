@@ -21,7 +21,7 @@ def BMI():
         userBmi = BodyMassIndex(feet, inches, weight)
 
         # Call calculation function
-        result = userBmi.calculate_bmi()
+        result = userBmi.calculate_BMI()
         return render_template("BMI.html", result=result)
     else:
         return render_template("BMI.html")
@@ -38,7 +38,7 @@ def retire():
         # Put data into RetirementSavings object
         userRetirement = RetirementSavings(age, salary, percent, goal)
         # Call calculation function
-        resultRetire = userRetirement.calculate_retirement()
+        resultRetire = userRetirement.calculate_goal_age()
         return render_template("Retire.html", resultRetire=resultRetire)
     else:
         return render_template("Retire.html")

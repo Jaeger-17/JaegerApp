@@ -3,20 +3,34 @@ import math
 
 class RetirementSavings:
 
-    def __init__(self, givenAge=20, givenSalary=40000, givenPercent=1, givenGoal=1000000):
+    def __init__(self, givenAge, givenSalary, givenPercent, givenGoal):
         self.age = givenAge
         self.salary = givenSalary
         self.percent = givenPercent
         self.goal = givenGoal
-
-    def calculate_retirement(self):
-        spy = (float(self.salary) * (float(self.percent) / 100)) * 1.35
-        years = math.ceil(float(self.goal) / spy)
-        return (float(self.age) + years)
-
-    def give_retirement_age(self):
-        retirementAge = self.calculate_retirement()
-        if retirementAge < 100:
-            return ("You will retire at age " + str(retirementAge) + "\n")
+        return
+    
+    def check_numbers_r(self):
+        if self.age < 0 or self.salary < 0 or self.percent < 0 or self.goal < 0 or self.percent > 100:
+            raise Exception
         else:
-            return "You will probably not be able to reach your goal.\n"
+            return
+
+    def get_savings_per_year(self):
+        return (self.salary * (self.percent/100)) * 1.35
+
+    def get_years_til_goal(self):
+        if self.salary == 0:
+            return 100
+        else:
+            return math.ceil(self.goal / self.get_savings_per_year())
+
+    def calculate_goal_age(self):
+        return self.get_years_til_goal() + self.age
+
+    def give_result_r(self):
+        retireAge = self.calculate_goal_age()
+        if retireAge < 100:
+            return "You will retire at age " + str(retireAge) + "."
+        else:
+            return "You will not retire until you are 100 or older."
