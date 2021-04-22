@@ -8,7 +8,7 @@ class TestApp(unittest.TestCase):
     def test_create_BMI(self):
         userBMI = BodyMassIndex(5, 10, 150)
         self.assertEqual(userBMI.feet, 5)
-        self.assertEqual(userBMI.inches, 10)        
+        self.assertEqual(userBMI.inches, 10)
         self.assertEqual(userBMI.weight, 150)
 
     def test_check_numbers(self):
@@ -20,7 +20,7 @@ class TestApp(unittest.TestCase):
 
         try:
             userBMI1.check_numbers()
-        except:
+        except NegativeNumber:
             self.fail("unexpected exception")
 
         with self.assertRaises(Exception):
@@ -38,7 +38,6 @@ class TestApp(unittest.TestCase):
 
         self.assertEqual(userBMI1.conv_to_kg(), 67.5)
         self.assertEqual(userBMI2.conv_to_kg(), 0)
-        
 
     def test_conv_to_inches(self):
         userBMI1 = BodyMassIndex(5, 10, 0)
@@ -51,7 +50,6 @@ class TestApp(unittest.TestCase):
         self.assertEqual(userBMI3.conv_to_inches(), 10)
         self.assertEqual(userBMI4.conv_to_inches(), 0)
 
-
     def test_conv_to_meters(self):
         userBMI1 = BodyMassIndex(5, 10, 0)
         userBMI2 = BodyMassIndex(0, 0, 0)
@@ -59,14 +57,12 @@ class TestApp(unittest.TestCase):
         self.assertEqual(userBMI1.conv_to_meters(), 1.75)        
         self.assertEqual(userBMI2.conv_to_meters(), 0)
 
-
     def test_calculate_BMI(self):
         userBMI1 = BodyMassIndex(5, 10, 150)
         userBMI2 = BodyMassIndex(6, 3, 120)
 
         self.assertEqual(userBMI1.calculate_bmi(), 22.0)
         self.assertEqual(userBMI2.calculate_bmi(), 15.4)
-
 
     def test_give_result(self):
         userBMI_1 = BodyMassIndex(5, 10, 100)
@@ -85,7 +81,6 @@ class TestApp(unittest.TestCase):
         self.assertEqual(userBMI_6.give_result(), "You are obese.")
         self.assertEqual(userBMI_7.give_result(), "You are obese.")
 
-
     def test_create_retire(self):
         userRetire = RetirementSavings(25, 65000, 10, 500000)
         self.assertEqual(userRetire.age, 25)
@@ -102,7 +97,7 @@ class TestApp(unittest.TestCase):
 
         try:
             userRetire1.check_numbers_r()
-        except:
+        except NegativeNumber:
             self.fail("unexpected exception")
 
         with self.assertRaises(Exception):
@@ -127,7 +122,7 @@ class TestApp(unittest.TestCase):
         userRetire1 = RetirementSavings(25, 65000, 10, 500000)
         userRetire2 = RetirementSavings(30, 100000, 5, 500000)
         userRetire3 = RetirementSavings(25, 0, 10, 500000)
-        
+
         self.assertEqual(userRetire1.get_years_til_goal(), 57)
         self.assertEqual(userRetire2.get_years_til_goal(), 75)
         self.assertEqual(userRetire3.get_years_til_goal(), 100)

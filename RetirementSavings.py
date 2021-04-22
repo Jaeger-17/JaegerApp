@@ -8,7 +8,7 @@ class RetirementSavings:
         self.salary = givenSalary
         self.percent = givenPercent
         self.goal = givenGoal
-    
+
     def check_numbers_r(self):
         if self.age < 0 or self.salary < 0 or self.percent < 0 or self.goal < 0 or self.percent > 100:
             raise Exception
@@ -16,7 +16,7 @@ class RetirementSavings:
             return
 
     def get_savings_per_year(self):
-        return (float(self.salary) * (float(self.percent)/100)) * 1.35
+        return (float(self.salary) * (float(self.percent) / 100)) * 1.35
 
     def get_years_til_goal(self):
         if self.salary == 0:
